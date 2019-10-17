@@ -1,0 +1,58 @@
+[
+  [
+    {
+      "name": "xtensor",
+      "description": "Multi-dimensional array expressions in C++"
+    },
+    {
+      "name": "xframe",
+      "description": "Multi-dimensional data frames in C++"
+    }
+  ],
+  [
+    {
+      "name": "xsimd",
+      "description": "SIMD features of modern preprocessors in C++"
+    },
+    {
+      "name": "xtl",
+      "description": "Template library implementing modern C++ features"
+    }
+  ],
+  [
+    {
+      "name": "xtensor-python",
+      "description": "Python bindings for xtensor"
+    },
+    {
+      "name": "xtensor-julia",
+      "description": "Julia bindings for xtensor"
+    }
+  ],
+  [
+    {
+      "name": "xtensor-r",
+      "description": "R bindings for xtensor"
+    },
+    {
+      "name": "xtensor-blas",
+      "description": "BLAS extension to xtensor"
+    }
+  ],
+  [
+    {
+      "name": "xtensor-fftw",
+      "description": "FFTW bindings for xtensor"
+    },
+    {
+      "name": "xtensor-io",
+      "description": "xtensor plugin to read and write images, audio files, numpy (compressed) npz and HDF5"
+    }
+  ],
+  [
+    {
+      "name": "xtensor-ros",
+      "description": "ROS (Robot Operating System) bindings for xtensor"
+    }
+  ]
+]

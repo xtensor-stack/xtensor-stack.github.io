@@ -1,38 +1,46 @@
 ---
 layout: default
-title: Public team management for the xtensor project
+title: xtensor project
 ---
 
-<h2>How we wrote xtensor</h2>
+<p>This website contains team meetings notes and schedule with the xtensor community. It also contains links to blog-posts on projects on the xtensor stack.</p>
 
-This blog-post series will drive you through the process of writing xtensor, and will help you understand it more so that you can contribute!
+<h2>xtensor stack</h2>
 
-<ul>
-  <li><a href="https://medium.com/@johan.mabille/how-we-wrote-xtensor-1-n-n-dimensional-containers-f79f9f4966a7">N-Dimensional Containers</a></li>
-  <li><a href="https://medium.com/@johan.mabille/how-we-wrote-xtensor-2-n-access-operators-57e8e3852263">Access Operators</a></li>
-  <li><a href="https://medium.com/@johan.mabille/how-we-wrote-xtensor-3-n-the-constructors-65a177260638">Constructors</a></li>
-  <li><a href="https://medium.com/@johan.mabille/how-we-wrote-xtensor-4-n-value-semantics-6baa6856d313">Value Semantics</a></li>
-  <li><a href="https://medium.com/@johan.mabille/how-we-wrote-xtensor-5-n-expression-templates-d07332e73d1d">Expression Templates</a></li>
-  <li><a href="https://medium.com/@johan.mabille/how-we-wrote-xtensor-6-n-operator-overloading-984c2e5b4171">Operator Overloading</a></li>
-</ul>
+{% for cards in site.data.cards %}
+<div class="row mb-3 mt-3">
+  {% for card in cards %}
+  <div class="col-sm-6">
+    <div id="{{ card.name }}" class="card xtensor-card">
+      <div class="img-container">
+        <img src="/{{ card.name }}.svg" class="card-logo">
+      </div>
+      <div class="card-body">
+        <p class="card-text">{{ card.description }}</p>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endfor %}
 
-<h2>Calendar for the xtensor public video meetings.</h2>
-<p>
-This page contains the calendar for the public team meetings of the xtensor community.
-If you have a Google account, you can add this calendar to you account with the "+" button
-at the bottom-right corner.
-</p>
+<script type="text/javascript">
+  window.onload = function() {
+    var cardLogos = document.querySelectorAll('.card-logo');
 
-<iframe src="https://calendar.google.com/calendar/embed?src=quantstack.net_ekenrpbi4hl6riljfnbthqfdgk%40group.calendar.google.com&ctz=Europe%2FParis" style="border: 0; width: 100%; min-height: 400px;" frameborder="0" scrolling="no"></iframe>
+    for(var idx = 0; idx < cardLogos.length; idx++) {
+      cardLogos[idx].style.display = 'inline-block';
+      cardLogos[idx].height = 0.3 * cardLogos[idx].naturalHeight;
+    }
 
-<h2>Meeting Notes:</h2>
-
-<p>These are the notes from the meetings, which are generally written during the call by connected team members.</p>
-
-<ul>
-  <li>No meeting notes yet</li>
-  <!-- UNCOMMENT THE FOLLOWING WHEN THERE WILL BE MEETING NOTES -->
-  <!-- {% for post in site.posts %}
-    <li><a href="{{ post.url }}">{{ post.title }}</a></li>
-  {% endfor %} -->
-</ul>
+    var cards = document.querySelectorAll('.xtensor-card');
+    for(var idx = 0; idx < cards.length; idx++) {
+      var elt = cards[idx];
+      elt.onclick = function(elt) {
+        return function(event) {
+          window.open('https://github.com/xtensor-stack/' + elt.id);
+        };
+      }(elt);
+    }
+  }
+</script>
