@@ -36,7 +36,7 @@
     },
     {
       "name": "xtensor-blas",
-      "description": "BLAS extension to xtensor"
+      "description": "BLAS bindings for xtensor"
     }
   ],
   [
