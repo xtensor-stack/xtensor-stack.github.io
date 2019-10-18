@@ -20,16 +20,50 @@
         color: white;
         padding: 20px;
     }
+    .xtensor-link {
+      color: #7fd787;
+      font-size: x-large;
+    }
+    .project-logo {
+      display: block;
+      margin: 40px auto 40px auto;
+    }
+    .card-logo {
+      display: none;
+      max-width: 50%;
+    }
+    .xtensor-card {
+      height: 100%;
+      color: black;
+    }
+    .xtensor-card:hover {
+      box-shadow: 4px 4px 12px #aaa;
+      cursor: pointer;
+    }
+    .img-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100px;
+    }
+    .card-text {
+      text-align: center;
+    }
     </style>
     <link rel="icon" href="/favicon.ico" />
   </head>
   <body>
     <div class="content-fluid xtensor-black">
       <div class="container">
-         <div>
-           <img src="/xtensor-logo.svg" style="display: block; margin: 40px auto 40px auto; max-width: 400px;"/>
-           <h4 style="text-align: center">{{ page.title }}</h4>
-         </div>
+        <div>
+          <img src="/xtensor.svg" class="project-logo"/>
+          <h4 style="text-align: center">{{ page.title }}</h4>
+        </div>
+        <nav class="nav">
+          <a class='nav-link xtensor-link {% if page.name == "index.html" %}disabled{% endif %}' href="/index">Home</a>
+          <a class="nav-link xtensor-link {% if page.name == 'calendar.html' %}disabled{% endif %}" href="/calendar">Calendar</a>
+          <a class="nav-link xtensor-link {% if page.name == 'blogs.html' %}disabled{% endif %}" href="/blogs">Blog</a>
+        </nav>
       </div>
     </div>
     <div class="content-fluid xtensor-white">
